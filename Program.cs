@@ -20,21 +20,21 @@ namespace LabraryManagementSystem
             BookTittle[0] = "Math";
             BookISBN[0] = "1679";
             BookAuther[0] = "Ahmed";
-            BorrowerName[0] = "No";
+            BorrowerName[0] = " ";
             BookAvailability[0] = true;
             LastBookIndex++;
 
             BookTittle[0] = "Arbic";
             BookISBN[0] = "4570";
             BookAuther[0] = "Ali";
-            BorrowerName[0] = "No";
-            BookAvailability[0] = true;
+            BorrowerName[0] = "Sara";
+            BookAvailability[0] = false;
             LastBookIndex++;
 
             BookTittle[0] = "Math";
             BookISBN[0] = "1679";
             BookAuther[0] = "Ahmed";
-            BorrowerName[0] = "No";
+            BorrowerName[0] = " ";
             BookAvailability[0] = true;
             LastBookIndex++;
 
@@ -59,18 +59,79 @@ namespace LabraryManagementSystem
                     case 1:
 
                         Console.WriteLine("Enter Book Tittle : ");
-                        BookTittle[LastBookIndexTracker + 1] = Console.ReadLine();
+                        BookTittle[LastBookIndex + 1] = Console.ReadLine();
                         Console.WriteLine("Enter Book ISBN : ");
-                        BookISBN[LastBookIndexTracker + 1] = Console.ReadLine();
+                        BookISBN[LastBookIndex + 1] = Console.ReadLine();
                         Console.WriteLine("Enter Book Auther : ");
-                        BookAuther[LastBookIndexTracker + 1] = Console.ReadLine();
+                        BookAuther[LastBookIndex + 1] = Console.ReadLine();
 
                         LastBookIndex++;
 
                         break;
 
                     case 2:
+                        //Check if book exists and is available before lending
 
+                        Console.WriteLine("choice : \n a. Enter book tittle. \n b. Enter book ISBN. ");
+                        string choice = Console.ReadLine();
+                        
+                        if (choice == "a")
+                        {
+                            Console.WriteLine("Enter book tittle :");
+                            string tittle = Console.ReadLine();
+
+                            bool book_tittleFound = false;
+                            bool availability ;
+                            for (int i = 0; i < 100; i++)
+                            {
+                                if (tittle == BookTittle[i])
+                                {
+                                    book_tittleFound =true;
+                                    availability =BookAvailability[i];
+                                    Console.WriteLine("Enter borrow name :");
+                                    BorrowerName[i] = Console.ReadLine();
+                                    Console.WriteLine("The book boroow successfully.");
+                                    break;
+
+                                }
+                            }
+                            if (book_tittleFound == false)
+                            {
+                                Console.WriteLine("Book tittle not found.");
+                            }
+
+
+                        }
+
+                        else if (choice == "b")
+                        {
+                            Console.WriteLine("Entetr book ISBN :");
+                            string book_num = Console.ReadLine();
+
+                            bool book_ISBNFound = false;
+                            bool availability;
+                            for (int i = 0; i < 100; i++)
+                            {
+                                if (book_num == BookTittle[i])
+                                {
+                                    book_ISBNFound = true;
+                                    availability = BookAvailability[i];
+                                    BorrowerName[i] = Console.ReadLine();
+                                    Console.WriteLine("The book boroow successfully.");
+                                    break;
+
+                                }
+                            }
+                            if (book_ISBNFound == false)
+                            {
+                                Console.WriteLine("Book ISBN not found.");
+                            }
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid choice.");
+                        }
 
 
                     break;
@@ -112,11 +173,14 @@ namespace LabraryManagementSystem
                     break;
                 }
 
-
+                Console.WriteLine("Press any key to continue....");
+                Console.ReadKey();
+                Console.Clear();
 
 
             }
-
+            
+           
 
 
 
