@@ -64,14 +64,14 @@ namespace LabraryManagementSystem
                         BookISBN[LastBookIndexTracker + 1] = Console.ReadLine();
                         Console.WriteLine("Enter Book Auther : ");
                         BookAuther[LastBookIndexTracker + 1] = Console.ReadLine();
-                        Console.WriteLine("Enter Borrower Name : ");
-                        BorrowerName[LastBookIndexTracker + 1] = Console.ReadLine();
 
                         LastBookIndex++;
 
                         break;
 
                     case 2:
+
+
 
                     break;
 
