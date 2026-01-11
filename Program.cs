@@ -11,7 +11,7 @@ namespace LabraryManagementSystem
 
             string[] BookTittle = new string[100];
             string [] BookISBN = new string[100];
-            string[] BookAuther = new string[100];
+            string[] BookAuthor = new string[100];
             string[] BorrowerName = new string[100];
             bool[] BookAvailability = new bool[100];
             int LastBookIndex = -1;
@@ -19,21 +19,21 @@ namespace LabraryManagementSystem
             //seed data
             BookTittle[0] = "Math";
             BookISBN[0] = "1679";
-            BookAuther[0] = "Ahmed";
+            BookAuthor[0] = "Ahmed";
             BorrowerName[0] = "Salim ";
             BookAvailability[0] = false;
             LastBookIndex++;
 
             BookTittle[0] = "Arbic";
             BookISBN[0] = "4570";
-            BookAuther[0] = "Ali";
+            BookAuthor[0] = "Ali";
             BorrowerName[0] = "Sara";
             BookAvailability[0] = false;
             LastBookIndex++;
 
             BookTittle[0] = "Math";
             BookISBN[0] = "1679";
-            BookAuther[0] = "Ahmed";
+            BookAuthor[0] = "Ahmed";
             BorrowerName[0] = " ";
             BookAvailability[0] = true;
             LastBookIndex++;
@@ -64,7 +64,7 @@ namespace LabraryManagementSystem
                         Console.WriteLine("Enter Book ISBN : ");
                         BookISBN[LastBookIndex + 1] = Console.ReadLine();
                         Console.WriteLine("Enter Book Auther : ");
-                        BookAuther[LastBookIndex + 1] = Console.ReadLine();
+                        BookAuthor[LastBookIndex + 1] = Console.ReadLine();
 
                         LastBookIndex++;
 
