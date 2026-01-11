@@ -1,4 +1,9 @@
-﻿using System.Diagnostics;
+﻿internal class LabraryManagementSystem
+
+{
+    static void Main(string[] args)
+    {
+        
 
 //system storge
 
@@ -196,26 +201,51 @@ while (true)
 
                 break;
 
-                    case 5:
+        case 5:
+                  //List All Available Books
 
-                    break;
+                Console.WriteLine("List available books. "); 
 
-                case 6:
+                bool available = false;
+                for(int i = 0; i < 100; i++)
+                {
+                if (available = BookAvailability[i])
+                {
+                    available = true;
+                    Console.WriteLine("Book tittle is : " + BookTittle[i]);
+                    Console.WriteLine("Book ISBN is : " + BookISBN[i]);
+                    Console.WriteLine("Book author is : " + BookAuthor[i]);
 
-                    break;
+                }
+                
+                }
 
-                case 7:
+                if (available == false)
+            {
+                Console.WriteLine("No book is available.");
+            }
 
-                    exit = true;
+            
+        break;
 
-                    break;
+        case 6:
 
 
-                default:
 
-                    Console.WriteLine("Invalid option.");
+        break;
 
-                    break;
+        case 7:
+
+              exit = true;
+
+        break;
+
+
+        default:
+
+             Console.WriteLine("Invalid option.");
+
+        break;
 
 
                 }
