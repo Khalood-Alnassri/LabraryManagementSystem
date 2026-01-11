@@ -229,6 +229,36 @@ while (true)
         break;
 
         case 6:
+                    //Transfer Book
+                    Console.WriteLine("Enter book tittle or book ISBN : ");
+                    string BookDetail = Console.ReadLine();
+
+                    bool isBookFound = false;
+                    for (int i = 0; i < 100; i++)
+                    {
+                        if (BookDetail == BookTittle[i] || BookDetail == BookISBN[i])
+                        {
+                            isBookFound = true;
+                            if (BookAvailability[i] == true)
+                            {
+                                BookAvailability[i] = false;
+                                Console.WriteLine("Book is transfer successfully.");
+                                Console.WriteLine("The book unavailable now.");
+
+                            }
+                            else
+                            {
+                                Console.WriteLine("The book currently is unavailable.");
+                            }
+
+                        }
+                    }
+                    if (isBookFound == false)
+                    {
+                        Console.WriteLine("Invalid book detail.");
+                    }
+
+
 
 
 
