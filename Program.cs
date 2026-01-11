@@ -140,62 +140,29 @@ namespace LabraryManagementSystem
                     case 3:
                         //Return Book 
 
-                        Console.WriteLine("choice : \n a. Enter book tittle. \n b. Enter book ISBN. ");
-                        string choices = Console.ReadLine();
+                        Console.WriteLine("Enter book tittle or book ISBN. ");
+                        string book_detail = Console.ReadLine();
 
-                        if (choices == "a")
+                        bool bookFound = false;
+                        for(int i = 0; i < 100; i++)
                         {
-                            Console.WriteLine("Enter book tittle :");
-                            string tittle = Console.ReadLine();
-
-                            bool availability =true;
-                            for (int i = 0; i < 100; i++)
+                            if (book_detail == BookTittle[i] || book_detail == BookISBN[i])
                             {
-                                if (tittle == BookTittle[i])
-                                {
-                                    availability = false;
-                                    BorrowerName[i] = Console.Clear();
-                                    Console.WriteLine("The book boroow successfully.");
-                                    break;
-
-                                }
+                                bookFound= true;
+                                BookAvailability[i] = true;
+                                BorrowerName[i] = " ";
+                                Console.WriteLine("The is return.");
+                                break;
                             }
-                            if (availability == true)
-                            {
-                                Console.WriteLine("Book is available.");
-                            }
-
-
                         }
 
-                        else if (choices == "b")
+                        if (bookFound == false)
                         {
-                            Console.WriteLine("Entetr book ISBN :");
-                            string book_num = Console.ReadLine();
-
-                            bool book_ISBNFound = false;
-                            bool availability;
-                            for (int i = 0; i < 100; i++)
-                            {
-                                if (book_num == BookTittle[i])
-                                {
-                                    book_ISBNFound = true;
-                                    availability = BookAvailability[i];
-                                    BorrowerName[i] = Console.ReadLine();
-                                    Console.WriteLine("The book boroow successfully.");
-                                    break;
-
-                                }
-                            }
-                            if (book_ISBNFound == false)
-                            {
-                                Console.WriteLine("Book ISBN not found.");
-                            }
-
+                            Console.WriteLine("Sorry book not found. ");
                         }
                         else
                         {
-                            Console.WriteLine("Invalid choice.");
+                            Console.WriteLine("Invalid book detail.");
                         }
 
 
