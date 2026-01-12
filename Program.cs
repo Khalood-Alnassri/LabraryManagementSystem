@@ -22,18 +22,18 @@ BorrowerName[0] = "Salim ";
 BookAvailability[0] = false;
 LastBookIndex++;
 
-BookTittle[0] = "Arbic";
-BookISBN[0] = "4570";
-BookAuthor[0] = "Ali";
-BorrowerName[0] = "Sara";
-BookAvailability[0] = false;
+BookTittle[1] = "Arbic";
+BookISBN[1] = "4570";
+BookAuthor[1] = "Ali";
+BorrowerName[1] = "Sara";
+BookAvailability[1] = false;
 LastBookIndex++;
 
-BookTittle[0] = "Math";
-BookISBN[0] = "1679";
-BookAuthor[0] = "Ahmed";
-BorrowerName[0] = " ";
-BookAvailability[0] = true;
+BookTittle[2] = "Math";
+BookISBN[2] = "1679";
+BookAuthor[2] = "Ahmed";
+BorrowerName[2] = " ";
+BookAvailability[2] = true;
 LastBookIndex++;
 
 
