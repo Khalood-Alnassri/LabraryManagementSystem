@@ -38,7 +38,7 @@ LastBookIndex++;
 
 
 bool exit = false;
-while (true)
+while (exit == true)
 {
 
     Console.WriteLine("Welcome to labrary system.");
@@ -230,39 +230,66 @@ while (true)
 
         case 6:
                     //Transfer Book
-                    Console.WriteLine("Enter book tittle or book ISBN : ");
-                    string BookDetail = Console.ReadLine();
+                    Console.WriteLine("Enter frist borrower name : ");
+                    string fristBorrower = Console.ReadLine();
 
-                    bool isBookFound = false;
+                    Console.WriteLine("Enter second borrower name : ");
+                    string secondBorrower = Console.ReadLine();
+
+
+                    bool fristBorrowerFound = false;
+                    int fristBorrowerIndex = 0;
                     for (int i = 0; i < 100; i++)
                     {
-                        if (BookDetail == BookTittle[i] || BookDetail == BookISBN[i])
+                        if (fristBorrower == BorrowerName[i])
                         {
-                            isBookFound = true;
-                            if (BookAvailability[i] == true)
-                            {
-                                BookAvailability[i] = false;
-                                Console.WriteLine("Book is transfer successfully.");
-                                Console.WriteLine("The book unavailable now.");
+                            fristBorrowerFound = true;
+                            fristBorrowerIndex = i; 
+                            
+                            break;  
+                        }  
+                    }
 
-                            }
-                            else
+                    if (fristBorrowerFound == false)
+                    {
+                        Console.WriteLine("current borrower name not found.");
+                    }
+
+                    else
+                    {
+
+                        bool secondBorrowerFound = false;
+                        int secondBorrowerIndex = 0;
+                        for (int i = 0; i < 100; i++)
+                        {
+                            if (secondBorrower == BorrowerName[i])
                             {
-                                Console.WriteLine("The book currently is unavailable.");
+                                secondBorrowerFound = true;
+                                secondBorrowerIndex = i;
+
+                                break;
                             }
+                        }
+
+                        if (secondBorrowerFound == false)
+                        {
+                            Console.WriteLine("current borrower name not found.");
+                        }
+
+                       else
+                        {
+                            string bookInformation = " ";
+                            bookInformation = BorrowerName[fristBorrowerIndex];
+                            BorrowerName[fristBorrowerIndex] = BorrowerName[secondBorrowerIndex];
+                            BorrowerName[secondBorrowerIndex] = bookInformation;
 
                         }
                     }
-                    if (isBookFound == false)
-                    {
-                        Console.WriteLine("Invalid book detail.");
-                    }
 
 
 
 
-
-        break;
+                        break;
 
         case 7:
 
